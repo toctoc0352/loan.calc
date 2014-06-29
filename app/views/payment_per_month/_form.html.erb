@@ -1,0 +1,31 @@
+<%= form_tag payment_per_month_result_path ,:method => 'get' , :class => 'form-horizontal', :role => 'form' do %>
+  <div class="form-group">
+  	<%= label_tag :loan,'借入金(万円)', :class => 'col-sm-4 control-label' %>
+  	<div class="col-sm-4">
+  		<%= number_field_tag :loan, nil, :class => 'form-control' %>
+  	</div>
+  </div>
+  <div class="form-group">
+  	<%= label_tag :bonus,'内ボーナス返済額(万円)', :class => 'col-sm-4 control-label' %>
+  	<div class="col-sm-4">
+  		<%= number_field_tag :bonus, nil, :class => 'form-control' %>
+  	</div>
+  </div>
+  <div class="form-group">
+  	<%= label_tag :period,'借入期間(年数)', :class => 'col-sm-4 control-label' %>
+  	<div class="col-sm-4">
+  		<%= number_field_tag :period, nil, :class => 'form-control' %>
+  	</div>
+  </div>
+  <div class="form-group">
+  	<%= label_tag :apy,'年利(%)', :class => 'col-sm-4 control-label' %>
+  	<div class="col-sm-4">
+  		<%= number_field_tag :apy, nil, :class => 'form-control' %>
+  	</div>
+  </div>
+  <div class="form-group">
+  	<div class="col-sm-offset-4 col-sm-4">
+  		<%= submit_tag '計算', :class => 'btn btn-default' %>
+  	</div>
+  </div>
+<% end %>

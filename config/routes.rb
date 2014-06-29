@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  root 'static_pages#home'
+  root 'payment_per_month#index'
+
+  get 'payment_per_month' => 'payment_per_month#index'
+  
+  get 'payment_per_month/result' => 'payment_per_month#result'
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
