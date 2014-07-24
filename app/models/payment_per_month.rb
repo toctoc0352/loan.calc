@@ -12,10 +12,13 @@ class PaymentPerMonth
     if !self.valid?
       return nil
     end
-    apy = self.apy / 100.to_f
-    ratePerMonth = apy / 12.to_f
-    repaymentCount = self.period * 12.to_f
-    repaymentAmount = ( (self.loan - self.bonus) * ratePerMonth ) / ( 1 - ( 1 + ratePerMonth ) ** (repaymentCount * -1) ).to_f
+    loan = self.loan.to_f
+    bonus = self.bonus.to_f
+    period = self.period.to_f
+    apy = self.apy.to_f / 100
+    ratePerMonth = apy / 12
+    repaymentCount = period * 12
+    repaymentAmount = ( (loan - bonus) * ratePerMonth ) / ( 1 - ( 1 + ratePerMonth ) ** (repaymentCount * -1) ).to_f
     repaymentAmount.round
   end
   

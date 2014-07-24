@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root 'static_pages#home'
+  root 'payment_per_months#new'
+  
+  resources :payment_per_months, only: [:new, :create]
+ 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
