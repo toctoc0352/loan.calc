@@ -70,17 +70,25 @@ describe PaymentPerMonth do
       end
       its(:amount){ should == 80410 }
     end
-
+    
+    describe "all params string" do
+      let(:paymentPerMonth){ PaymentPerMonth.new(loan: "30000000", bonus: "5000000",
+                            period: "30", apy: "1") }
+      it "should return vaild amount" do
+        paymentPerMonth.amount.should == 80410
+      end
+    end
   end
 
   describe "invalid amount" do
+    describe "all propaty is nil" do
       before do
         @paymentPerMonth.loan = nil
         @paymentPerMonth.bonus = nil
         @paymentPerMonth.period = nil
         @paymentPerMonth.apy = nil
       end
-      its(:amount){ should == nil }
-  end
-  
+      its(:amount){ should == nil }      
+    end
+  end  
 end

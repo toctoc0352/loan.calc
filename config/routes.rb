@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
-  root 'payment_per_month#index'
-
-  get 'payment_per_month' => 'payment_per_month#index'
+  root 'payment_per_months#new'
   
-  get 'payment_per_month/result' => 'payment_per_month#result'
-  
+  resources :payment_per_months, only: [:new, :create]
+ 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
