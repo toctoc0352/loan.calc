@@ -21,6 +21,8 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'bootstrap-sass', '~> 3.1.1'
 
+gem 'heroku_secrets', git: 'https://github.com/alexpeattie/heroku_secrets.git' 
+
 # bundle exec rake doc:rails generates the API under doc/api.
 group :doc do
   gem 'sdoc', '~> 0.4.0'
