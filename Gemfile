@@ -23,6 +23,8 @@ gem 'bootstrap-sass', '~> 3.1.1'
 
 gem 'heroku_secrets', git: 'https://github.com/alexpeattie/heroku_secrets.git' 
 
+gem 'dotenv-rails', '~> 0.11.1'
+
 # bundle exec rake doc:rails generates the API under doc/api.
 group :doc do
   gem 'sdoc', '~> 0.4.0'
@@ -38,7 +40,6 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '2.14.1'
-  gem 'dotenv-rails', '~> 0.11.1'
 end
 
 group :test do
