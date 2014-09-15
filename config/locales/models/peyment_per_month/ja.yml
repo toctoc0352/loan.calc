@@ -1,0 +1,8 @@
+ja:
+  activemodel:
+    attributes:
+      payment_per_month:
+        loan: ローン
+        bonus: ボーナス
+        period: 期間
+        apy: 年利
