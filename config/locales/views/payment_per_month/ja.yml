@@ -1,0 +1,5 @@
+ja:
+  payment_per_months:
+    form:
+      calc: 計算
+      repayment_per_month: 月額返済額

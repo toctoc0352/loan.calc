@@ -3,7 +3,7 @@ loan.calc
 
 ## Ruby version
 
-- Ruby 2.1.1
+- Ruby 2.1.2
 
 ## System dependencies
 
@@ -15,7 +15,6 @@ loan.calc
 bundle install --path vendor/bundle
 vi .env
 >> SECRET_KEY_BASE=[Any Value]
-bundle exec rake dotenv:load 
 ```
 
 ## How to run the test suite
