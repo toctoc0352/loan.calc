@@ -1,4 +1,5 @@
-<%= form_for @paymentPerMonth, :html => {:class => 'form-horizontal', :role => 'form'}, :remote => true  do |f| %>
+<%= form_for @paymentPerMonth, :html => {:class => 'form-horizontal', :role => 'form'} do |f| %>
+  <%= render partial: "shared/error_message", locals: { paymentPerMonth: @paymentPerMonth } %>
   <div class="form-group">
   	<%= f.label :loan, :class => 'col-sm-4 control-label' %>
   	<div class="col-sm-4">
@@ -28,10 +29,12 @@
   		<%= f.submit t('.calc'), :class => 'btn btn-default' %>
   	</div>
   </div>
+  <% if @paymentPerMonth.amount != nil %>
   <div class="form-group" id="amount-group">
-  	<%= f.label :amount, t('.repayment_per_month'), :class => 'col-sm-4 control-label sr-only' %>
+  	<%= f.label :amount, t('.repayment_per_month'), :class => 'col-sm-4 control-label' %>
   	<div class="col-sm-4">  
-  		<p class="form-control-static"></p>		
+  		<p class="form-control-static"><%= @paymentPerMonth.amount %></p>
   	</div>
   </div>
+  <% end %>
 <% end %>
