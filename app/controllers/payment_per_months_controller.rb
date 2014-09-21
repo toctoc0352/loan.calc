@@ -9,11 +9,8 @@ class PaymentPerMonthsController < ApplicationController
   
   def create
     @paymentPerMonth = PaymentPerMonth.new(permit_params)
-    if @paymentPerMonth.valid?
-    else
-      render 'new'
-    end
-    #respond_with @paymentPerMonth, location: new_payment_per_month_url
+    @paymentPerMonth.valid?
+    render 'new'
   end
   
   private
