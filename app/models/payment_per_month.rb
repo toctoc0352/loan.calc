@@ -3,10 +3,10 @@ class PaymentPerMonth
   
   attr_accessor :loan, :bonus, :period, :apy
   
-  validates :loan, presence: true, numericality: true
-  validates :bonus, presence: true, numericality: true
-  validates :period, presence: true, numericality: true
-  validates :apy, presence: true, numericality: true
+  validates :loan, numericality: true
+  validates :bonus, numericality: true
+  validates :period, numericality: true
+  validates :apy, numericality: true
   
   def amount
     if !self.valid?

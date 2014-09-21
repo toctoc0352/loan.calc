@@ -20,6 +20,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
 gem 'bootstrap-sass', '~> 3.1.1'
+gem 'bootstrap_form', '~> 2.2.0'
 
 gem 'heroku_secrets', git: 'https://github.com/alexpeattie/heroku_secrets.git' 
 
