@@ -1,4 +1,7 @@
 ja:
+  errors:
+    messages:
+      not_a_number: 数値で入力してください。
   activemodel:
     attributes:
       payment_per_month:

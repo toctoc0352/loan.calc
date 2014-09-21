@@ -1,37 +1,14 @@
-<%= form_for @paymentPerMonth, :html => {:class => 'form-horizontal', :role => 'form'}, :remote => true  do |f| %>
-  <div class="form-group">
-  	<%= f.label :loan, :class => 'col-sm-4 control-label' %>
-  	<div class="col-sm-4">
-  		<%= f.text_field :loan, :class => 'form-control' %>
-  	</div>
-  </div>
-  <div class="form-group">
-  	<%= f.label :bonus, :class => 'col-sm-4 control-label' %>
-  	<div class="col-sm-4">
-  		<%= f.text_field :bonus, :class => 'form-control' %>
-  	</div>
-  </div>
-  <div class="form-group">
-  	<%= f.label :period, :class => 'col-sm-4 control-label' %>
-  	<div class="col-sm-4">
-  		<%= f.text_field :period, :class => 'form-control' %>
-  	</div>
-  </div>
-  <div class="form-group">
-  	<%= f.label :apy, :class => 'col-sm-4 control-label' %>
-  	<div class="col-sm-4">
-  		<%= f.text_field :apy, :class => 'form-control' %>
-  	</div>
-  </div>
-  <div class="form-group">
-  	<div class="col-sm-offset-4 col-sm-4">
-  		<%= f.submit t('.calc'), :class => 'btn btn-default' %>
-  	</div>
-  </div>
-  <div class="form-group" id="amount-group">
-  	<%= f.label :amount, t('.repayment_per_month'), :class => 'col-sm-4 control-label sr-only' %>
-  	<div class="col-sm-4">  
-  		<p class="form-control-static"></p>		
-  	</div>
-  </div>
+<%= bootstrap_form_for @paymentPerMonth, layout: :horizontal, label_col: "col-sm-4", control_col: "col-sm-5" do |f| %>
+  <%= f.text_field :loan %>
+  <%= f.text_field :bonus %>
+  <%= f.text_field :period %>
+  <%= f.text_field :apy %>
+  <%= f.form_group control_col:"col-sm-offset-4 col-sm-5" do %>
+    <%= f.submit t('.calc'), class: 'btn btn-default' %>
+  <% end %>
+  <% if @paymentPerMonth.amount != nil %>
+    <%= f.static_control label: t('.repayment_per_month') do  %>
+      <%= @paymentPerMonth.amount %>
+    <% end %>
+  <% end %>
 <% end %>

@@ -1,1 +1,8 @@
 @import "bootstrap";
+
+#error_explanation {
+  color: #ff0000;
+  ul {
+    margin: 0 0 18px 0;
+  }
+}

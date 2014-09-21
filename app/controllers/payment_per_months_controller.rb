@@ -1,6 +1,6 @@
 class PaymentPerMonthsController < ApplicationController
   
-  respond_to :html, :js
+  respond_to :html
   
   def new
     @paymentPerMonth = PaymentPerMonth.new
@@ -9,7 +9,8 @@ class PaymentPerMonthsController < ApplicationController
   
   def create
     @paymentPerMonth = PaymentPerMonth.new(permit_params)
-    respond_with @paymentPerMonth
+    @paymentPerMonth.valid?
+    render 'new'
   end
   
   private
