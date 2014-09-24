@@ -1,7 +1,12 @@
 class PaymentPerMonthsController < ApplicationController
   
   respond_to :html
-  
+
+  def index
+    @paymentPerMonth = PaymentPerMonth.new
+    render 'new'
+  end
+
   def new
     @paymentPerMonth = PaymentPerMonth.new
     respond_with @paymentPerMonth
@@ -17,4 +22,5 @@ class PaymentPerMonthsController < ApplicationController
     def permit_params
       params.require(:payment_per_month).permit(:loan, :bonus, :period, :apy)
     end
+
 end

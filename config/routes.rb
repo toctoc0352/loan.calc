@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root 'payment_per_months#new'
+  root 'payment_per_months#index'
   
-  resources :payment_per_months, only: [:new, :create]
+  resources :payment_per_months, only: [:index, :new, :create]
  
 
   # The priority is based upon order of creation: first created -> highest priority.
